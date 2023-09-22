@@ -29,6 +29,25 @@
         </li>
         {% endblock %}
       </ul>
+
+      {% with messages =  get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for catagory, message in messages %}
+            {% if catagory == 'error' %}
+              <div class="alert alert-danger alert-dismissable fade show w-25 position-relative top-0 start-50 translate-middle-x" role="alert">
+                {{ message }}
+                
+              </div>
+            {% else %}
+              <div class="alert alert-success alert-dismissable fade show w-50 position-relative top-0 start-50 translate-middle-x" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
       {% block content %}
         <h1>This is Base</h1>
       {% endblock %}
