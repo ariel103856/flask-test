@@ -36,12 +36,10 @@
             {% if catagory == 'error' %}
               <div class="alert alert-danger alert-dismissable fade show w-25 position-relative top-0 start-50 translate-middle-x" role="alert">
                 {{ message }}
-                
               </div>
             {% else %}
-              <div class="alert alert-success alert-dismissable fade show w-50 position-relative top-0 start-50 translate-middle-x" role="alert">
+              <div class="alert alert-success alert-dismissable fade show w-25 position-relative top-0 start-50 translate-middle-x" role="alert">
                 {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
             {% endif %}
           {% endfor %}
